@@ -8,8 +8,6 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
 public class Forum {
 
     @Id
@@ -20,4 +18,20 @@ public class Forum {
     @OneToMany(cascade = CascadeType.ALL)
     @JsonProperty(index = 1)
     private List<Post> posts;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 }

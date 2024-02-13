@@ -6,8 +6,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-@Getter
-@Setter
 public class PerfilUser {
 
     private String nome;
@@ -33,15 +31,59 @@ public class PerfilUser {
     }
 
     public UserModel toUserModel(String username, String password, Long id){
-        UserModel user = new UserModel();
-        user.setUsername(username);
+        UserModel user = new UserModel(username, password, this.fotoPerfil, this.email);
         user.setId(id);
-        user.setPassword(password);
-        user.setEmail(this.email);
         user.setCidade(this.cidade);
         user.setEstado(this.estado);
-        user.setFotoPerfil(this.fotoPerfil);
         user.setSobrenome(this.sobrenome);
         return user;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
     }
 }

@@ -13,8 +13,6 @@ import java.time.format.FormatStyle;
 import java.util.List;
 
 @Entity
-@Setter
-@Getter
 @NoArgsConstructor
 public class Post {
 
@@ -62,4 +60,83 @@ public class Post {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Curtir> curtirs;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public UserModel getPerfilUser() {
+        return perfilUser;
+    }
+
+    public void setPerfilUser(UserModel perfilUser) {
+        this.perfilUser = perfilUser;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public List<Curtir> getCurtirs() {
+        return curtirs;
+    }
+
+    public void setCurtirs(List<Curtir> curtirs) {
+        this.curtirs = curtirs;
+    }
 }

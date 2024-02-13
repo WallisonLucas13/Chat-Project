@@ -45,7 +45,7 @@ public class UserService {
 
         repository.save(model);
 
-        return AuthenticationResponse.builder()
+        return AuthenticationResponse.AuthenticationResponseBuilder.builder()
                 .token(jwtService.generateToken(model))
                 .build();
     }
@@ -63,7 +63,7 @@ public class UserService {
         UserDetails userDetails = repository.findByUsername(model.getUsername())
                 .orElseThrow(() -> new UsernameNotFoundException(""));
 
-        return AuthenticationResponse.builder()
+        return AuthenticationResponse.AuthenticationResponseBuilder.builder()
                 .token(jwtService.generateToken(userDetails))
                 .build();
     }

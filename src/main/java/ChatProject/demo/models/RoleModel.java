@@ -7,8 +7,6 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-@Getter
-@Setter
 public class RoleModel implements GrantedAuthority {
 
     @Id
@@ -22,5 +20,21 @@ public class RoleModel implements GrantedAuthority {
     @Override
     public String getAuthority() {
         return roleName.toString();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public RoleName getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(RoleName roleName) {
+        this.roleName = roleName;
     }
 }

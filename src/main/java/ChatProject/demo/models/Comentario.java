@@ -14,8 +14,6 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Getter
-@Setter
 public class Comentario {
 
     public Comentario(String username, String msg, UserModel userModel){
@@ -51,4 +49,60 @@ public class Comentario {
 
     @ManyToOne
     private UserModel perfilUser;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public UserModel getPerfilUser() {
+        return perfilUser;
+    }
+
+    public void setPerfilUser(UserModel perfilUser) {
+        this.perfilUser = perfilUser;
+    }
 }
